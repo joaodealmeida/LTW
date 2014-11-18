@@ -1,0 +1,20 @@
+Tabela Users
+	id
+	login
+	password
+
+Tabela Pool
+	id
+	listed
+	idQuestion
+	idAnswer
+	image
+
+Tabela Question
+	idQuestion
+	texto
+
+Tabela Answer
+	id
+	texto
+	counter
