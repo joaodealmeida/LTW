@@ -20,9 +20,20 @@
 		
 		
     $stmt = $db->prepare('INSERT INTO users VALUES (?, ?))';
-    $stmt->execute(array($user, sha1($pw)));  
+    $stmt->execute(array($user, sha1($password)));  
 
     return $stmt->fetch() !== false;
+  }
+  
+  function getUserID($username) {
+	global $db;
+	
+	$stmt = db->prepare('SELECT * FROM users WHERE username = $username ');
+	
+	$userID = $stmt->fetch()['id'];
+	
+	return $userID;
+  
   }
   
   
