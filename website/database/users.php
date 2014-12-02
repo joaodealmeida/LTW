@@ -14,7 +14,7 @@
     global $db;
 	
 	//Check if user exits already on database
-    $stmt = $db->prepare('SELECT * FROM users WHERE username = $username ');
+    $stmt = $db->prepare("SELECT * FROM users WHERE username = {$username} ");
 	if($stmt->fetch() == false)
 		return false;
 		
@@ -28,7 +28,7 @@
   function getUserID($username) {
 	global $db;
 	
-	$stmt = db->prepare('SELECT * FROM users WHERE username = $username ');
+	$stmt = db->prepare("SELECT * FROM users WHERE username = {$username} ");
 	
 	$userID = $stmt->fetch()['id'];
 	
