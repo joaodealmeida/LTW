@@ -5,6 +5,5 @@
  * Date: 25/11/2014
  * Time: 17:18
  */
-<?php
-  $db = new PDO('sqlite:site.db');
+  $db = new PDO('sqlite:db.db');
 ?>

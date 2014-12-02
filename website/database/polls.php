@@ -1,10 +1,9 @@
 <?php
-  include_once(database/users.php)
   
   function getAllPolls() {
 	global $db;
 	
-	$stmt = $db->prepare('SELECT * FROM polls');
+	$stmt = $db->prepare('SELECT * FROM poll');
     $stmt->execute();  
 
     return $stmt->fetchAll();
@@ -13,7 +12,7 @@
   function getPollItem($id) {
     global $db;
     
-    $stmt = $db->prepare('SELECT * FROM polls WHERE id = ?');
+    $stmt = $db->prepare('SELECT * FROM poll WHERE id = ?');
     $stmt->execute(array($id));  
 
     return $stmt->fetch();
@@ -25,17 +24,17 @@
 
 	
 	//Create Poll
-	$stmt = $db->prepare('INSERT INTO polls VALUES (?, ?))';
+	$stmt = $db->prepare('INSERT INTO poll (user_id,question) VALUES (?, ?)');
 	$stmt->execute(array($user_id, $question));
 
 	
-	$stmt = db->prepare('SELECT last_insert_rowid() FROM polls ');
+	$stmt = $db->prepare('SELECT last_insert_rowid() FROM poll ');
 	$last_id_pool = $stmt->fetch();
 	
 	
 	//Create answers and associating to the pool
 	for($i = 0; $i < count($answers); $i++){
-		$stmt = $db->prepare('INSERT INTO answers  VALUES (?, ?)');
+		$stmt = $db->prepare('INSERT INTO answers (text, poll_id) VALUES (?, ?)');
 		$stmt->execute(array($answers[$i], $last_id_pool));
 	}
 	
@@ -53,7 +52,7 @@
 	if(checkIfUserVotedAlready($poll_id,$user_id) == 0)
 		return false;
 	
-	$stmt = $db->prepare('INSERT INTO choice  VALUES (?,?,?)');	
+	$stmt = $db->prepare('INSERT INTO choice VALUES (?,?,?)');	
 	$stmt->execute(array($poll_id, $user_id, $answer_id));
 	
 	return true;
@@ -65,7 +64,7 @@
 	
 	$answers_id = $stmt->fetch();
 	
-	$answers_text = new array();
+	$answers_text = array();
 	
 	for($i = 0; i < count(answers_id); $i++){
 		$stmt = $db->prepare('SELECT text from answers WHERE id = ? ');
