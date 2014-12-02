@@ -6,4 +6,6 @@
   
   createPoll($_POST['question'], $_POST['answers']);
   
-  header('Location: http://gnomo.fe.up.pt/~ei12053/projecto_final/polllist.php' . $_SERVER['HTTP_REFERER']);
+  header('Location: http://gnomo.fe.up.pt/~ei12053/projecto_final/poll_list.php' . $_SERVER['HTTP_REFERER']);
+  
+  ?>
