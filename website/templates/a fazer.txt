@@ -1,0 +1,6 @@
+pagina inicial
+pagina de criacao de poll
+pagina listagem de pools
+pagina de manage my pools
+pagina de login
+pagina de polldetails
