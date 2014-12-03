@@ -7,7 +7,7 @@
   if (userExists($_POST['username'], $_POST['password'])){ // test if user exists
     $_SESSION['username'] = $_POST['username'];
 	$_SESSION['password'] = sha1($_POST['password']);
-	
+	print_r($_SESSION);
 		header("Location: list_polls.php");
 	}	// store the username
 	else 

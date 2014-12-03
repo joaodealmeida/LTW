@@ -6,7 +6,7 @@
     $stmt = $db->prepare('SELECT * FROM users WHERE username = ? AND password = ?');
     $stmt->execute(array($username, sha1($password)));  
 
-    if( count($stmt->fetch()) > 0 )
+    if( count($stmt->fetchAll()) > 0 )
 		return true;
 	
 	return false;

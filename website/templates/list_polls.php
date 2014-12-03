@@ -32,7 +32,7 @@
 							<?=$row['user_id']?>
 						</td>
 						<td>
-							<button type="button" class="btn btn-success">Details</button>
+							<a href="view_poll_details.php?id=<?=$row['id']?>" class="btn btn-success">View</a>
 						</td>
 					</tr>
 		</div>
