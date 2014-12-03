@@ -33,6 +33,10 @@ body {
     width: auto;
 }
 
+.navbar .navbar-form {
+	align: right;
+}
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -69,13 +73,35 @@ body {
     margin-bottom: 20px;
     text-align: center;
 }
+.marketing{
+	margin-top: 100px;
+	border: 2px;
+	border-color: black;
+	border-radius: 10px;
+	background-color: #d0c8c8;
+}
 .marketing h2 {
     font-weight: normal;
+}
+
+.marketing .col-md-6 {
+	text-align: center;
 }
 .marketing .col-lg-4 p {
     margin-right: 10px;
     margin-left: 10px;
 }
+
+.pollcreator {
+	margin-top: 100px;
+	border: 2px;
+	border-color: black;
+	border-radius: 10px;
+	background-color: #d0c8c8;
+}
+
+
+
 
 
 /* Featurettes
@@ -91,6 +117,19 @@ body {
     line-height: 1;
     letter-spacing: -1px;
 }
+
+
+}
+.footer {
+position: absolute;
+bottom: 0;
+width: 100%;
+/* Set the fixed height of the footer here */
+height: 60px;
+background-color: #f5f5f5;
+}
+
+
 
 
 /* RESPONSIVE CSS

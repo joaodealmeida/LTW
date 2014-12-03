@@ -18,7 +18,7 @@
     return $stmt->fetch();
   }
   
-  function createPoll($question,$answers){
+  function createPoll($question, $user_id, $answers){
 	global $db;
 	
 
