@@ -104,6 +104,19 @@ body {
 	margin-top: 10px;	
 }
 
+.pollview {
+	margin-top: 100px;
+	border: 2px;
+	border-color: black;
+	border-radius: 10px;
+	background-color: #d0c8c8;
+}
+
+.pollview .col-md-12{
+	margin-top: 10px;
+	horiontal-align: middle;
+}
+
 
 
 

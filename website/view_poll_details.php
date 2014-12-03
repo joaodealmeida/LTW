@@ -5,9 +5,12 @@
   include_once("database/polls.php");
   include_once("database/users.php");
 
-  $result = getAllPolls();
+  $pollInfo = getPollItem($_GET['id']);
+  $answersInfo = getPollAnswers($_GET['id']);
+  
+  
   
   include_once("templates/header.php");  
-  include_once("templates/list_polls.php");  
+  include_once("templates/view_poll.php");  
   include_once("templates/footer.php");
 ?>

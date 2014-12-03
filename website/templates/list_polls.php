@@ -11,8 +11,10 @@
 		<div class="col-md-3"><?=$row['id']?></div>
 		<div class="col-md-3"><?=$row['question']?></div>
 		<div class="col-md-3"><?=$row['user_id']?></div>
-		<div class="col-md-3"><button type="button" class="btn btn-success">Details</button></div>
+		<div class="col-md-3">
+			<a href="view_poll_details.php?id=<?=$row['id']?>" class="btn btn-success">View</a>
 		</div>
+	  </div>
 		<?}?>
 	</div>
 	

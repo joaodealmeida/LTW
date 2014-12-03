@@ -41,14 +41,16 @@
    }
   
   function checkIfUserVotedAlready($poll_id, $user_id){
+	global $db;
+	
 	$stmt = $db->prepare('SELECT * FROM choices WHERE poll_id = ? AND user_id = ?');
     $stmt->execute(array($poll_id, $user_id));  
 
-    return count($stmt->fetch());
+    return count($stmt->fetchAll());
   }
   
   function voteOnPoll($poll_id, $user_id, $answer_id){
-  
+	global $db;
 	if(checkIfUserVotedAlready($poll_id,$user_id) == 0)
 		return false;
 	
@@ -59,20 +61,24 @@
   }
   
   function getPollAnswers($poll_id){
-	$stmt = $db->prepare('SELECT answer_id from choices WHERE poll_id = ?');
+	global $db;
+	
+	$stmt = $db->prepare('SELECT * from answers WHERE poll_id = ?');
+	
 	$stmt->execute(array($poll_id));
 	
-	$answers_id = $stmt->fetch();
+	$answers = $stmt->fetchAll();
 	
-	$answers_text = array();
+	//$answers_text = array();
 	
-	for($i = 0; i < count(answers_id); $i++){
-		$stmt = $db->prepare('SELECT text from answers WHERE id = ? ');
+	/*for($i = 0; i < count(answers_id); $i++){
+		$stmt = $db->prepare('SELECT * from answers WHERE id = ? ');
 		$stmt->execute(array($answers[i]));
-		$answers_text[] = $stmt->fetch();
+		$answers = $stmt->fetchAll();
 		}
+		*/
 	
-	return $answers_text;
+	return $answers;
   }
 	
 	
