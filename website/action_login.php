@@ -6,10 +6,10 @@
  
   if (userExists($_POST['username'], $_POST['password'])){ // test if user exists
     $_SESSION['username'] = $_POST['username'];
-	$_SESSION['password'] = $_POST['password'];
-}	// store the username
- 
-
- 
-  header("Location: list_polls.php");
+	$_SESSION['password'] = sha1($_POST['password']);
+	
+		header("Location: list_polls.php");
+	}	// store the username
+	else 
+		 header("Location: login_failed.php");
 ?>

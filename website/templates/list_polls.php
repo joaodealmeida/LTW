@@ -1,18 +1,43 @@
     <div class="container marketing">
-
-	  <div class="row">
-		<div class="col-md-3"><b>#</b></div>
-		<div class="col-md-3"><b>Question</b></div>
-		<div class="col-md-3"><b>Author</b></div>
-	  </div>
+<table class="table table-bordered table-hover table-condensed">
+	  <thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Question
+						</th>
+						<th>
+							Author
+						</th>
+						<th>
+							Details
+						</th>
+					</tr>
+				</thead>
+		<tbody>
 	  
 	  <? foreach ($result as $row) {?>
       <div class="row">
-		<div class="col-md-3"><?=$row['id']?></div>
-		<div class="col-md-3"><?=$row['question']?></div>
-		<div class="col-md-3"><?=$row['user_id']?></div>
-		<div class="col-md-3"><button type="button" class="btn btn-success">Details</button></div>
+	  
+		<tr class="active">
+						<td>
+							<?=$row['id']?>
+						</td>
+						<td>
+							<?=$row['question']?>
+						</td>
+						<td>
+							<?=$row['user_id']?>
+						</td>
+						<td>
+							<button type="button" class="btn btn-success">Details</button>
+						</td>
+					</tr>
 		</div>
 		<?}?>
+		</tbody>
+			</table>
 	</div>
 	
