@@ -16,8 +16,6 @@
   function createUser($username, $password) {
     global $db;
 	
-	echo $username . ' ' . $password;
-	
 	//Check if user exits already on database
     $stmt = $db->prepare('SELECT * FROM users WHERE username = ?');
 	$stmt->execute(array($username));

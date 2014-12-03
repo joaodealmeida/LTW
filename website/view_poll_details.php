@@ -10,7 +10,8 @@
   
   
   
+  
   include_once("templates/header.php");  
-  include_once("templates/view_poll.php");  
+  include_once("templates/view_poll_details.php");  
   include_once("templates/footer.php");
 ?>

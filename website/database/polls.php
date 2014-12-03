@@ -51,8 +51,6 @@
   
   function voteOnPoll($poll_id, $user_id, $answer_id){
 	global $db;
-	if(checkIfUserVotedAlready($poll_id,$user_id) == 0)
-		return false;
 	
 	$stmt = $db->prepare('INSERT INTO choice VALUES (?,?,?)');	
 	$stmt->execute(array($poll_id, $user_id, $answer_id));
@@ -76,11 +74,20 @@
 		$stmt->execute(array($answers[i]));
 		$answers = $stmt->fetchAll();
 		}
-		*/
+	*/
 	
 	return $answers;
   }
 	
+  function getChoiceCount($poll_id,$answer_id){
+	global $db;
+	
+	$stmt = $db->prepare('SELECT * FROM choice WHERE poll_id = ? and answer_id = ?');
+	$stmt->execute(array($poll_id,$answer_id)); 
+	
+	return count($stmt->fetchAll());
+	
+  }
 	
 
   

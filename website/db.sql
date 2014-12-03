@@ -36,5 +36,8 @@ INSERT INTO poll (user_id,question) VALUES ('1','Votacao 2 ');
 INSERT INTO poll (user_id,question) VALUES ('1','Votacao tres');
 INSERT INTO poll (user_id,question) VALUES ('1','Votacao 4 ');
 
+INSERT INTO choice VALUES (1,2,1);
+INSERT INTO choice VALUES (1,3,3);
+
 
 

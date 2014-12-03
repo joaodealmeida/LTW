@@ -1,5 +1,5 @@
 
-    <div class="container">
+    <div class="container marketing">
       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
 
@@ -18,13 +18,25 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Option1', 1],
-          ['Option2', 2],
-          ['Option3', 3],
-          ['Option4', 4],
-          ['Option5', 2]
-        ]);
+		<?php $counter=1;?>
+		
+		<?php echo print_r($answersInfo);?>
+		data.addRows(
+		<?php  foreach ($answersInfo as $row) {
+		  if(counter < count($answersInfo)){?>
+		  
+          ['<?php echo $row['text']?>', <?php echo getChoiceCount($pollInfo['id'],$row['id'])?>],
+		  
+		  <?}
+		  else
+		  {?>
+		  
+			['<?php echo $row['text']?>', <?php echo getChoiceCount($pollInfo['id'],$row['id'])?>]
+			
+		  <?php }
+			$counter=$counter+1;
+			}?>
+		  );
 
         // Set chart options
         var options = { 'width':400,
@@ -36,7 +48,7 @@
       }
     </script>
     </div>
-<div class="container">
+<div class="container marketing">
 <h2>Question</h2>
 <img alt="140x140" src="http://lorempixel.com/140/140/" class="img-thumbnail" />
 <div id="chart_div"></div>
