@@ -1,17 +1,28 @@
-    <div class="container pollcreator">
+<div class="container">
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="jscript.js"></script>  
+</div>
+
+
+<div class="container pollcreator">
+ 
 
 	  <div class="row">
 		<div class="col-md-3">
-			<form role="form" action="action_create_poll.php" method="post">
-				<div class="form-group">
-					 <label for="inputQuestion">Question</label><input class="form-control" name="question" type="text" />
-				</div>
-				<div class="form-group">
-					 <label for="inputAnswer">Answer:</label><input class="form-control" name="answer" type="text" />
+			
+				<div class="form-answer">
+					 <label for="inputQuestion">Question</label><input class="form-control" name="question" id="question" type="text" />
+				
+				
+					 <label for="inputAnswer">Answer 1:</label><input class="form-control" name="answer" id="answer1" type="text" />
+					 <label for="inputAnswer">Answer 2:</label><input class="form-control" name="answer" id="answer2" type="text" />
 					 <label for="exampleInputFile">File input</label><input id="exampleInputFile" type="file" />
 				</div>
-				<button type="submit" class="btn btn-success">Submit</button>
-			</form>
+				
+				<input type='button' value='Add' id='addButton'>
+				<input type='button' value='Remove' id='removeButton'>
+				<button type="submit" class="btn btn-success" id="submitButton">Submit</button>
+			
 		</div>
 	   </div>
 	</div>
