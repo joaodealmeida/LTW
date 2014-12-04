@@ -22,14 +22,22 @@
 	global $db;
 	
 
+	//Make sure any ony of the question/answer is empty
+	if(empty($question))
+		return false;
+	
+	for($i = 0; $i < count($answers); $i++){
+		if(empty($answers[$i]))
+		 return false;
+	}
 	
 	//Create Poll
 	$stmt = $db->prepare('INSERT INTO poll (user_id,question) VALUES (?, ?)');
 	$stmt->execute(array($user_id, $question));
 
+	$last_id_pool = $db->lastInsertId();
 	
-	$stmt = $db->prepare('SELECT last_insert_rowid() FROM poll ');
-	$last_id_pool = $stmt->fetch();
+	echo $last_id_poll;
 	
 	
 	//Create answers and associating to the pool
@@ -37,6 +45,8 @@
 		$stmt = $db->prepare('INSERT INTO answers (text, poll_id) VALUES (?, ?)');
 		$stmt->execute(array($answers[$i], $last_id_pool));
 	}
+	
+	return true;
 	
    }
   

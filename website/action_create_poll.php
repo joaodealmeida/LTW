@@ -7,10 +7,14 @@
    $question = $_REQUEST['question'];
    $answers = $_REQUEST['answers'];
    
-   
+ 
   //print_r($_POST['answers']);
-  createPoll($question,1, $answers);
-  
-  //header("Location: list_polls.php");
+  if(createPoll($question,1, $answers))
+	header("Location: list_polls.php");
+  else
+	{
+		echo 'Invalid question/answer.Try again';
+		header("Location: create_poll.php");
+	}
   
   ?>
