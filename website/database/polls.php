@@ -43,10 +43,13 @@
   function checkIfUserVotedAlready($poll_id, $user_id){
 	global $db;
 	
-	$stmt = $db->prepare('SELECT * FROM choices WHERE poll_id = ? AND user_id = ?');
+	$stmt = $db->prepare('SELECT * FROM choice WHERE poll_id = ? AND user_id = ?');
     $stmt->execute(array($poll_id, $user_id));  
 
-    return count($stmt->fetchAll());
+    if(count($stmt->fetchAll()) > 0)
+		return true;
+		
+	return false;
   }
   
   function voteOnPoll($poll_id, $user_id, $answer_id){

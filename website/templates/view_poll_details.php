@@ -1,6 +1,7 @@
 
-    <div class="container marketing">
+    <div class="container">
       <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	  
     <script type="text/javascript">
 
       // Load the Visualization API and the piechart package.
@@ -19,28 +20,28 @@
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
 		<?php $counter=1;?>
-		
-		<?php echo print_r($answersInfo);?>
-		data.addRows(
+		data.addRows([
 		<?php  foreach ($answersInfo as $row) {
-		  if(counter < count($answersInfo)){?>
+		  if($counter < count($answersInfo)){?>
 		  
-          ['<?php echo $row['text']?>', <?php echo getChoiceCount($pollInfo['id'],$row['id'])?>],
+          ['<?=$row['text']?>', <?=getChoiceCount($pollInfo['id'],$row['id'])?>],
 		  
 		  <?}
 		  else
 		  {?>
 		  
-			['<?php echo $row['text']?>', <?php echo getChoiceCount($pollInfo['id'],$row['id'])?>]
+			['<?= $row['text']?>', <?= getChoiceCount($pollInfo['id'],$row['id'])?>]
 			
 		  <?php }
 			$counter=$counter+1;
 			}?>
-		  );
+		  ]);
 
         // Set chart options
-        var options = { 'width':400,
-                       'height':300};
+        var options = { width:400,
+                       height:300,
+					   backgroundColor:'transparent'
+					   };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -52,5 +53,6 @@
 <h2>Question</h2>
 <img alt="140x140" src="http://lorempixel.com/140/140/" class="img-thumbnail" />
 <div id="chart_div"></div>
+
 
 </div>

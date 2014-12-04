@@ -1,7 +1,7 @@
 	<div class="container pollview">
 	<div class="col-md-12 column">
 			<h3>
-				This username is already in use. Please use another.
+				Register failed. Unavailable username/password.
 			</h3>
 		</div>
 	

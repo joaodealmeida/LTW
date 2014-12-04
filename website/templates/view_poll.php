@@ -6,14 +6,14 @@
 			<h3>
 				<?=$pollInfo['question']?>
 			</h3>
-	<form role="form">
+	<form action="action_vote.php" method="post" role="form">
 			<? foreach ($answersInfo as $row) {?>
 			<div class="radio">
-			  <label><input type="radio" name="<?=$row['id']?>" ><?=$row['text']?></label>
+			  <label><input type="radio" name= "answer_id" value="<?=$row['id']?>" ><?=$row['text']?></label>
 			</div>
 			<?}?>
+			<button type="submit" name="poll_id" value="<?=$pollInfo['id']?>" class="btn btn-info">Vote</button>
 			</form>
-	   <button type="button" class="btn btn-info">Vote</button>
 		</div>	 
 	</div>
 </div>

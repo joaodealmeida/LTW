@@ -19,7 +19,7 @@
 	//Check if user exits already on database
     $stmt = $db->prepare('SELECT * FROM users WHERE username = ?');
 	$stmt->execute(array($username));
-	if(count($stmt->fetchAll()) > 0 ){
+	if(count($stmt->fetchAll()) > 0 || empty($username) || empty($password) ){
 		return false;
 	}
 	
@@ -30,16 +30,14 @@
     return true;
   }
   
-  function getUserID($username) {
+  function getUserInfo($username) {
 	global $db;
 	
-	$stmt = $db->prepare("SELECT * FROM users WHERE username = {$username} ");
+	$stmt = $db->prepare('SELECT * FROM users WHERE username = ? ');
+	$stmt->execute(array($username));  
 	
-	$userID = $stmt->fetch()['id'];
-	
-	return $userID;
-  
-  }
+	return $stmt->fetchAll();
+	}
   
   
 ?>
