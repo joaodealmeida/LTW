@@ -50,7 +50,7 @@
     </script>
     </div>
 <div class="container marketing">
-<h2>Question</h2>
+<h2><?=$pollInfo['question']?></h2>
 <img alt="140x140" src="http://lorempixel.com/140/140/" class="img-thumbnail" />
 <div id="chart_div"></div>
 
