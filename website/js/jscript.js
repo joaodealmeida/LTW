@@ -87,14 +87,12 @@ window.location.replace("list_polls.php");
 return false;
 });
 
+//Search
 
 
-
-$(".search").keyup(function() 
-{ 
-
-
-var inputSearch = $(this).val();
+$(".search").keypress(function(e) {
+    if(e.which == 13) {
+        var inputSearch = $(this).val();
 
 
 
@@ -109,8 +107,11 @@ if(inputSearch!='')
   
   
   
-}return false;    
+}return false; 
+    }
 });
+
+
 
 
   
