@@ -38,6 +38,17 @@
 	
 	return $stmt->fetchAll();
 	}
+	
+	function getInfoByID($user_id){
+	
+	global $db;
+	
+	$stmt = $db->prepare('SELECT * FROM users WHERE id = ? ');
+	$stmt->execute(array($user_id));  
+	
+	return $stmt->fetchAll();
+		
+	}
   
   
 ?>

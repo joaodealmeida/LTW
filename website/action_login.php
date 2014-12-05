@@ -8,7 +8,7 @@
     $_SESSION['username'] = $_POST['username'];
 	$_SESSION['password'] = sha1($_POST['password']);
 	print_r($_SESSION);
-		header("Location: list_polls.php");
+		header("Location: index.php");
 	}	// store the username
 	else 
 		 header("Location: login_failed.php");

@@ -54,6 +54,8 @@ alert('Insert a question please');
 return false;
 }
 
+var image = $("#image").val();
+
 for(i=1; i<=counter; i++){
 	var answer=$('#answer' + i).val();
 	if (answer=="")
@@ -74,7 +76,7 @@ for(i=1; i<=counter; i++){
 $.ajax({
 type: "POST",
 url: "action_create_poll.php",
-data: { 'question':question ,'answers':answersArray},
+data: { 'question':question , 'image':image , 'answers':answersArray},
 cache: false,
 success: function(result){
 window.location.replace("list_polls.php");

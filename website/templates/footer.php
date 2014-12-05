@@ -1,7 +1,9 @@
 
 	  <footer class="footer">
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; Nome 1, Nome 2, Nome 3 &middot; </p>
+		<div class="container text-center">
+			<p class="pull-right"><a href="#">Back to top</a></p>
+			<p class="pull-left">&copy; João de Almeida, Bruno da Silva, Catarina Terra &middot; </p>
+		</div>
       </footer>
 
 

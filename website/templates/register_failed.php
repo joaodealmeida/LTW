@@ -3,8 +3,6 @@
 			<h3>
 				Register failed. Unavailable username/password.
 			</h3>
+			<a href="register.php" class="btn btn-info">Try Again</a>
 		</div>
-	
-
-<button type="button" class="btn btn-info">OK</button>
 </div>

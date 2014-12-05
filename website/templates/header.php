@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="J. Almeida">
+    <meta name="author" content="J. Almeida">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Carousel Template for Bootstrap</title>
+    <title>LTW Project</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,21 +40,28 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">LTW Project</a>
+                    <a class="navbar-brand" href="index.php">LTW Project</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Contacts</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="contacts.php">Contacts</a></li>
 						<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Polls <span class="caret"></span></a>
                            		<ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Create a new Poll</a></li>
-                                <li><a href="#">My Polls</a></li>
-                                <li><a href="#">List of Polls</a></li>
+                                <li><a href="create_poll.php">Create a new Poll</a></li>
+                                <li><a href="list_polls.php">List of Polls</a></li>
+								<li><a href="#">Search(TBI)</a></li>
                                 </ul>
                         </li>
+						<?  if( !(isset($_SESSION['username'])) || !(isset($_SESSION['password'])) ) {?>
+							<li> <form class="navbar-form " >
+							<a href="register.php" class="btn btn-danger">Register</a>
+							</form>
+							</li>
+							
+							<?}?>
+						
 					</ul>
 					
 					<?  if( !(isset($_SESSION['username'])) || !(isset($_SESSION['password'])) ) {?>

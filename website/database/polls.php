@@ -18,13 +18,16 @@
     return $stmt->fetch();
   }
   
-  function createPoll($question, $user_id, $answers){
+  function createPoll($question, $user_id, $answers, $image){
 	global $db;
 	
 
 	//Make sure any ony of the question/answer is empty
 	if(empty($question))
 		return false;
+		
+	if(empty($image))
+		$image = 'css/img/noimg.png';
 	
 	for($i = 0; $i < count($answers); $i++){
 		if(empty($answers[$i]))
@@ -32,8 +35,8 @@
 	}
 	
 	//Create Poll
-	$stmt = $db->prepare('INSERT INTO poll (user_id,question) VALUES (?, ?)');
-	$stmt->execute(array($user_id, $question));
+	$stmt = $db->prepare('INSERT INTO poll (user_id,question, image) VALUES (?, ?, ?)');
+	$stmt->execute(array($user_id, $question, $image));
 
 	$last_id_pool = $db->lastInsertId();
 	

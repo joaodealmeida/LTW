@@ -2,5 +2,5 @@
   session_start();
   session_destroy();
  
-  header("Location: list_polls.php");
+  header("Location: index.php");
 ?>

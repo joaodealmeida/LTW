@@ -2,7 +2,7 @@
 	<div class="row">
 	<div class="col-md-2 col-md-offset-5">
 		
-		<img alt="140x140" src="http://lorempixel.com/140/140/" class="img-thumbnail" />
+		<img alt="140x140" src="<?=$pollInfo['image']?>" class="img-thumbnail" />
 			<h3>
 				<?=$pollInfo['question']?>
 			</h3>

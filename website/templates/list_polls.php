@@ -29,7 +29,7 @@
 							<?=$row['question']?>
 						</td>
 						<td>
-							<?=$row['user_id']?>
+							<?=getInfoByID($row['user_id'])[0]['username']?>
 						</td>
 						<td>
 							<a href="view_poll_details.php?id=<?=$row['id']?>" class="btn btn-success">View</a>

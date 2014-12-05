@@ -11,9 +11,8 @@
 		<div class="col-md-3">
 			
 				<div class="form-answer">
-					 <label for="inputQuestion">Question</label><input class="form-control" name="question" id="question" type="text" />
-				
-					 <label for="exampleInputFile">File input</label><input id="exampleInputFile" type="file" />
+					 <label for="inputQuestion">Question:</label><input class="form-control" name="question" id="question" type="text" />
+					 <label for="inputQuestion">Image URL:</label><input class="form-control" name="image" id="image" type="text" />
 					 <label for="inputAnswer">Answer 1:</label><input class="form-control" name="answer" id="answer1" type="text" />
 					 <label for="inputAnswer">Answer 2:</label><input class="form-control" name="answer" id="answer2" type="text" />
 				</div>

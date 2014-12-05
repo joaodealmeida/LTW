@@ -5,6 +5,8 @@
 body {
     padding-bottom: 40px;
     color: #5a5a5a;
+	/*background-color: gray;*/
+	background-image: url('img/background.jpg');
 }
 
 
@@ -78,7 +80,8 @@ body {
 	border: 2px;
 	border-color: black;
 	border-radius: 10px;
-	background-color: #d0c8c8;
+	background: rgba(255,255,255,0.65);
+	
 }
 .marketing h2 {
     font-weight: normal;
@@ -97,7 +100,7 @@ body {
 	border: 2px;
 	border-color: black;
 	border-radius: 10px;
-	background-color: #d0c8c8;
+	background: rgba(255,255,255,0.65);
 }
 
 .pollcreator .col-md-12{
@@ -109,7 +112,7 @@ body {
 	border: 2px;
 	border-color: black;
 	border-radius: 10px;
-	background-color: #d0c8c8;
+	background: rgba(255,255,255,0.65);
 }
 
 .pollview .col-md-12{
@@ -135,15 +138,14 @@ body {
     letter-spacing: -1px;
 }
 
-
-}
 .footer {
-position: absolute;
-bottom: 0;
+display: inline-block;
+bottom: 0px;
 width: 100%;
 /* Set the fixed height of the footer here */
 height: 60px;
-background-color: #f5f5f5;
+color: #b6b6b6;
+
 }
 
 
