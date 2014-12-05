@@ -51,15 +51,10 @@
                            		<ul class="dropdown-menu" role="menu">
                                 <li><a href="create_poll.php">Create a new Poll</a></li>
                                 <li><a href="list_polls.php">List of Polls</a></li>
-								<li><a href="#">Search(TBI)</a></li>
                                 </ul>
                         </li>
 						<li>
-						<div class="contentArea">
-						<input type="text" class="search" id="inputSearch" />Ex: swadesh, ipsita, dharitri<br /> 
-						
-						</div>
-						
+						<a href="list_search.php">Search</a></li>
 						</li>
 						<?  if( !(isset($_SESSION['username'])) || !(isset($_SESSION['password'])) ) {?>
 							<li> <form class="navbar-form " >
