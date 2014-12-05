@@ -54,6 +54,13 @@
 								<li><a href="#">Search(TBI)</a></li>
                                 </ul>
                         </li>
+						<li>
+						<div class="contentArea">
+						<input type="text" class="search" id="inputSearch" />Ex: swadesh, ipsita, dharitri<br /> 
+						
+						</div>
+						
+						</li>
 						<?  if( !(isset($_SESSION['username'])) || !(isset($_SESSION['password'])) ) {?>
 							<li> <form class="navbar-form " >
 							<a href="register.php" class="btn btn-danger">Register</a>
