@@ -30,10 +30,11 @@ var answersArray = [];
           return false;
        }   
  
-	counter--;
+	
  
         $("#TextBoxDiv" + counter).remove();
- 
+	counter--;
+	
      });
 	 
 
@@ -46,8 +47,26 @@ $("#submitButton").click(function(){
 
 
 var question = $("#question").val();
+
+if (question=="")
+{
+alert('Insert a question please');
+return false;
+}
+
 for(i=1; i<=counter; i++){
-   	  answersArray.push($('#answer' + i).val());
+	var answer=$('#answer' + i).val();
+	if (answer=="")
+	{
+	alert('Insert all the answers please');
+	return false;
+	}
+}
+
+
+for(i=1; i<=counter; i++){
+	var answer=$('#answer' + i).val();
+	answersArray.push(answer);
 	}
 
 
@@ -58,7 +77,8 @@ url: "action_create_poll.php",
 data: { 'question':question ,'answers':answersArray},
 cache: false,
 success: function(result){
-alert(result);
+window.location.replace("list_polls.php");
+
 }
 });
 
