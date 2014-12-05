@@ -96,23 +96,15 @@ $(".search").keyup(function()
 
 var inputSearch = $(this).val();
 
-var dataString = 'searchword='+ inputSearch;
+
 
 
 if(inputSearch!='')
 {
 
-		 $.ajax({
-      type: "POST",
-      url: "list_search.php",
-      data: dataString,
-      cache: false,
-      success: function(data)
-      {
-	
-      
-      }
-      });
+	window.location.replace("list_search.php?word="+inputSearch);
+	  
+	 
   
   
   

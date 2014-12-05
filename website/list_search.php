@@ -5,7 +5,7 @@
   include_once("database/polls.php");
   include_once("database/users.php");
   
-   $word = $_REQUEST['searchword'];
+   $word = $_GET['word'];
 
   $result = getSearchPoll($word);
   
