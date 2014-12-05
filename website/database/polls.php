@@ -9,6 +9,20 @@
     return $stmt->fetchAll();
   }
   
+  function getSearchPoll($word) {
+	global $db;
+	
+	$qry = "SELECT * FROM poll WHERE question LIKE '%".$word."%'";
+	$result = $db->query($qry);
+	if($result === false) {
+				print_r($db->errorInfo());
+			}
+	return $result->fetchAll();
+  
+  
+  }
+  
+  
   function getPollItem($id) {
     global $db;
     

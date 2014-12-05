@@ -90,59 +90,41 @@ return false;
 
 
 
+$(".search").keyup(function() 
+{ 
 
 
+var inputSearch = $(this).val();
+
+var dataString = 'searchword='+ inputSearch;
 
 
+if(inputSearch!='')
+{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	 
-	//Submit
+		 $.ajax({
+      type: "POST",
+      url: "list_search.php",
+      data: dataString,
+      cache: false,
+      success: function(data)
+      {
 	
-/*	$("#form-question").submit(function(event) {
-	
-	
-	
-
-	
-	
-	
-Stop the usual form submission event
-
-event.preventDefault();
-
- get the elements required for the post method
-
-var $form = $( this ),
-
-url = $form.attr( 'action' );
-
- post method 
-
-var posting = $.post( url, { question: $('#question').val()}, function( data ) {
-	
-	alert(data);
+      
+      }
+      });
+  
+  
+  
+  
+}return false;    
 });
 
-});*/
-  
+
   
   
   
 });
+
+
 
